@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion Calculator</title>
+
+</head>
+
+<body>
+    <a href="index.html">Back to Kadin D's Homepage</a>
+
+    <div class="container">
+        <h2>Unit Conversion Calculator-Length</h2>
+        <!-- Input -->
+        <label for="inputValue">Input Value:</label>
+        <input type="text" id="inputValue" placeholder="Enter value" />
+
+        <label for="inputUnit">From Unit:</label>
+        <select id="inputUnit">
+            <option value="foot">Foot</option>
+            <option value="inch">Inch</option>
+            <option value="meter">Meter</option>
+        </select>
+
+        <br><br>
+
+        <!-- Output -->
+        <label for="outputValue">Converted Value:</label>
+        <input type="text" id="outputValue" readonly placeholder="Converted value" />
+
+        <label for="outputUnit">To Unit:</label>
+        <select id="outputUnit">
+            <option value="foot">Foot</option>
+            <option value="inch">Inch</option>
+            <option value="meter">Meter</option>
+        </select>
+
+        <br><br>
+
+        <!-- Convert Button -->
+        <button id="convertBtn">Convert</button>
+    </div>
+
+    <script>
+        // Convert Funcitons
+        function convertUnits() {
+            let inputValue = parseFloat(document.getElementById('inputValue').value);
+            let inputUnit = document.getElementById('inputUnit').value;
+            let outputUnit = document.getElementById('outputUnit').value;
+
+            if (isNaN(inputValue)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Conversion Rates 
+            const conversions = {
+                foot: {
+                    inch: 12,
+                    meter: 0.3048
+                },
+                inch: {
+                    foot: 1 / 12,
+                    meter: 0.0254
+                },
+                meter: {
+                    foot: 3.28084,
+                    inch: 39.3701
+                }
+            };
+
+            // Calculate
+            let convertedValue = inputValue * conversions[inputUnit][outputUnit];
+
+            // Display Result
+            document.getElementById('outputValue').value = convertedValue.toFixed(4);
+        }
+
+        // Click
+        document.getElementById('convertBtn').addEventListener('click', convertUnits);
+    </script>
+
+</body>
+
+</html>
