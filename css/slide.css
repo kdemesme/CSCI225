@@ -1,0 +1,82 @@
+/*Kadin D.*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #535050;
+}
+
+.gallery-container {
+  position: relative;
+  width: 92%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.gallery-content {
+  display: flex;
+  transition: transform 2s ease;
+}
+
+.gallery-item {
+  min-width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 70px;
+}
+
+.description {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #0e006c;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  color: #0e006c;
+  background-color: rgba(20, 205, 137, 0.5);
+  padding: 8px;
+  border-radius: 1000px;
+  cursor: cell;
+  visibility: visible;
+  opacity: 0.4;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.navigation-dots {
+  text-align: center;
+  position: static;
+  bottom: 0px;
+  width: 100%;
+}
+
+.dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: #0e006c;
+  border-radius: 50%;
+  cursor: cell;
+}
+
+.dot.active {
+  background-color: rgba(20, 205, 137, 0.5);
+  ;
+}
